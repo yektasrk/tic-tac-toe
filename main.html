@@ -70,6 +70,10 @@
         <script>
             var editorX = ace.edit("editorX");
             editorX.setTheme("ace/theme/tomorrow");
+            editorX.setValue(localStorage.getItem("editorX") || "", 1);
+            editorX.session.on('change', function () {
+                localStorage.setItem('editorX', editorX.getValue());
+            });
             editorX.session.setMode("ace/mode/python");
             editorX.setOptions({
                 enableBasicAutocompletion: true,
@@ -91,6 +95,10 @@
         <script>
             var editorO = ace.edit("editorO");
             editorO.setTheme("ace/theme/tomorrow");
+            editorO.setValue(localStorage.getItem("editorO") || "", 1);
+            editorO.session.on('change', function () {
+                localStorage.setItem('editorO', editorO.getValue());
+            });
             editorO.session.setMode("ace/mode/python");
             editorO.setOptions({
                 enableBasicAutocompletion: true,
