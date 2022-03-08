@@ -21,6 +21,14 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
     <script>
+        function resetBoard(botton) {
+            cells = "abcdefghi";
+            for (i = 0; i < cells.length; i++)
+                $(".game #" + cells[i]).html(cells[i]);
+            $(botton).prop("disabled", true);
+            $("#clear").prop("disabled", true);
+        }
+
         $(document).ready(function () {
             console.log("READY!");
 
@@ -30,13 +38,6 @@
 
             $("#AIO").change(function () {
                 $("#editorO").toggle("slow");
-            });
-
-            $("#play").click(function (e) {
-                c = "abcdefghi";
-                for (i = 0; i < c.length; i++)
-                    $(".game #" + c[i]).html(c[i]);
-                $(this).prop("disabled", true);
             });
 
             $("#helpOpen").click(function () {
@@ -125,7 +126,8 @@
         </table>
 
         <div id="play-container">
-            <button id="play"> START </button>
+            <button id="play" onclick="resetBoard('#play')"> START </button>
+            <button id="clear" onclick="resetBoard('#clear')"> CLEAR </button>
         </div>
 
         <div id="help-container">

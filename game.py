@@ -18,17 +18,16 @@ class Game:
             if self._cell_empty(cell):
                 cell.innerHTML = f"""<span style="color:black; font-weight: 600; font-size:36pt">{self.turn}</span>"""
             else:
-                self.cancel_game(
+                self.end_game(
                     f"error for {self.turn}: Cell is not empty!")
         except Exception as e:
             error_message = traceback.format_exc()
-            self.cancel_game(f"error for {self.turn}: {error_message}")
+            self.end_game(f"error for {self.turn}: {error_message}")
 
-        if self.game_end(self.turn):
-            timer.clear_interval(self.timer)
-            document["play"].disabled = False
+        if self.check_game_end(self.turn):
+            self.end_game()
 
-    def game_end(self, player):
+    def check_game_end(self, player):
         for i in range(3):
             if self.board[i][0].innerText == self.board[i][1].innerText == self.board[i][2].innerText == player:
                 return True
@@ -46,10 +45,12 @@ class Game:
                     fin = False
         return fin
 
-    def cancel_game(self, message):
+    def end_game(self, message=None):
         timer.clear_interval(self.timer)
         document["play"].disabled = False
-        alert(message)
+        document["clear"].disabled = False
+        if message:
+            alert(message)
 
     def rand(self):
         choices = []
