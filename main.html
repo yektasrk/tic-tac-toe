@@ -29,6 +29,20 @@
             $("#clear").prop("disabled", true);
         }
 
+        function setEditor(editor_name) {
+            var editor = ace.edit(editor_name);
+            editor.setTheme("ace/theme/tomorrow");
+            editor.setValue(localStorage.getItem(editor_name) || "", 1);
+            editor.session.on('change', function () {
+                localStorage.setItem(editor_name, editor.getValue());
+            });
+            editor.session.setMode("ace/mode/python");
+            editor.setOptions({
+                enableBasicAutocompletion: true,
+                enableSnippets: true
+            });
+        }
+
         $(document).ready(function () {
             console.log("READY!");
 
@@ -68,17 +82,7 @@
         <div class="player">Player X</div>
         <div class="ace-editor" id="editorX"></div>
         <script>
-            var editorX = ace.edit("editorX");
-            editorX.setTheme("ace/theme/tomorrow");
-            editorX.setValue(localStorage.getItem("editorX") || "", 1);
-            editorX.session.on('change', function () {
-                localStorage.setItem('editorX', editorX.getValue());
-            });
-            editorX.session.setMode("ace/mode/python");
-            editorX.setOptions({
-                enableBasicAutocompletion: true,
-                enableSnippets: true
-            });
+            setEditor("editorX");
         </script>
         <div class="ai-container">
             <label class="ai">
@@ -93,17 +97,7 @@
         <div class="player">Player O</div>
         <div class="ace-editor" id="editorO"></div>
         <script>
-            var editorO = ace.edit("editorO");
-            editorO.setTheme("ace/theme/tomorrow");
-            editorO.setValue(localStorage.getItem("editorO") || "", 1);
-            editorO.session.on('change', function () {
-                localStorage.setItem('editorO', editorO.getValue());
-            });
-            editorO.session.setMode("ace/mode/python");
-            editorO.setOptions({
-                enableBasicAutocompletion: true,
-                enableSnippets: true
-            });
+            setEditor("editorO");
         </script>
         <div class="ai-container">
             <label class="ai">
