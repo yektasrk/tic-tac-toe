@@ -70,8 +70,11 @@ class Game:
         if document[f"AI{self.turn}"].checked:
             return self.ai()
 
-        a, b, c, d, e, f, g, h, i = [
-            self.board[i][j].innerText for i in range(3) for j in range(3)]
+        _cells_list = [self.board[i][j].innerText for i in range(3) for j in range(3)]
+        _keys = "abcdefghi"
+        a, b, c, d, e, f, g, h, i = _cells_list
+        cells = dict(zip(_keys, _cells_list))
+
         result = ""
         _locals = locals()
         if self.turn == 'X':
