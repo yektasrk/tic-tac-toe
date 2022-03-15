@@ -4,8 +4,11 @@ body {
     display: grid;
     font-family: "Open Sans", sans-serif;
     background-color: #f0f0f0;
-    grid-template: "auto auto auto"
-                   1fr / 0.75fr 1fr 0.75fr;
+    grid-template-areas: "auto auto auto"
+                         "footer footer footer";
+    grid-template-columns: 0.75fr 1fr 0.75fr;
+    grid-template-rows: 1fr min-content;
+    height: 102vh;
 }
 
 .code {
@@ -252,4 +255,14 @@ input:checked+.slider:before {
     margin: 20px;
     display: inline-block;
     font-weight: bold;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    font-size: xx-small;
+    padding: 5px;
+    background-color: #dddcdc;
+    color: #000000;
+    margin-top: 10px;
 }
