@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    <div class="code" id="X" style="float: left;">
+    <div class="code" id="X">
         <div class="player">Player X</div>
         <div class="ace-editor" id="editorX"></div>
         <script>
@@ -88,22 +88,6 @@
         <div class="ai-container">
             <label class="ai">
                 <input id="AIX" type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            AI
-        </div>
-    </div>
-
-    <div class="code" id="O" style="float: right;">
-        <div class="player">Player O</div>
-        <div class="ace-editor" id="editorO"></div>
-        <script>
-            var editorO = ace.edit("editorO");
-            setEditor("editorO");
-        </script>
-        <div class="ai-container">
-            <label class="ai">
-                <input id="AIO" type="checkbox">
                 <span class="slider round"></span>
             </label>
             AI
@@ -148,6 +132,22 @@
             
             document["play"].bind("click", start_game)
         </script>
+    </div>
+
+    <div class="code" id="O">
+        <div class="player">Player O</div>
+        <div class="ace-editor" id="editorO"></div>
+        <script>
+            var editorO = ace.edit("editorO");
+            setEditor("editorO");
+        </script>
+        <div class="ai-container">
+            <label class="ai">
+                <input id="AIO" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            AI
+        </div>
     </div>
 </body>
 
