@@ -5,7 +5,7 @@ body {
     font-family: "Open Sans", sans-serif;
     background-color: #f0f0f0;
     grid-template-areas: "auto auto auto"
-                         "footer footer footer";
+        "footer footer footer";
     grid-template-columns: 0.75fr 1fr 0.75fr;
     grid-template-rows: 1fr min-content;
     height: 102vh;
@@ -201,8 +201,8 @@ input:checked+.slider:before {
     text-align: center;
 }
 
-#help{
-    background:rgba(0,0,0,.4);
+#help {
+    background: rgba(0, 0, 0, .4);
     cursor: pointer;
     display: none;
     height: 100%;
@@ -213,24 +213,24 @@ input:checked+.slider:before {
     z-index: 10000;
 }
 
-#helper{
+#helper {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
 }
 
-#help > div {
+#helpBox {
     background-color: #fff;
     box-shadow: 10px 10px 60px #555;
     display: inline-block;
-    height: auto;
-    max-width: 551px;
-    min-height: 100px;
+    max-width: 550px;
+    max-height: 550px;
     vertical-align: middle;
     width: 60%;
+    height: 60%;
     position: relative;
     border-radius: 8px;
-    padding: 15px 5%;
+    padding: 5px;
 }
 
 #helpClose {
@@ -251,10 +251,17 @@ input:checked+.slider:before {
 }
 
 #helpOpen {
-    font-size: 5px;
-    margin: 20px;
-    display: inline-block;
+    float: right;
+    font-size: 20px;
+    margin: 10px;
     font-weight: bold;
+    color: #5e5e5e;
+    cursor: pointer;
+}
+
+#helpContent {
+    width: 100%;
+    height: 100%;
 }
 
 footer {

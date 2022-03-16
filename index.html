@@ -72,9 +72,9 @@
 <body onload="brython(1)">
     <div id="help">
         <span id="helper"></span>
-        <div>
+        <div id="helpBox">
             <div id="helpClose">&times;</div>
-            <p>Add any HTML content<br />inside the popup box!</p>
+            <embed id="helpContent" type="text/html" src="guide.html">
         </div>
     </div>
 
@@ -95,6 +95,8 @@
     </div>
 
     <div class="game">
+        <div id="helpOpen" title="How to play"> ⓘ </div>
+
         <table>
             <tr>
                 <td id="a">a</td>
@@ -116,10 +118,6 @@
         <div id="play-container">
             <button id="play" onclick="resetBoard('#play')"> START </button>
             <button id="clear" onclick="resetBoard('#clear')"> CLEAR </button>
-        </div>
-
-        <div id="help-container">
-            <button id="helpOpen"> HELP </button>
         </div>
 
         <script type="text/python">

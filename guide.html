@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How to play</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p, pre {
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to play</h1>
+    <p>Welcome to the game! In this game, you'll be writing Python code for one or two players. Whenever it's your player's turn, your code will be executed from the beginning.</p>
+    <p>The game board consists of cells named a, b, c, d, e, f, g, h, and i. You have two ways to access each cell: using a variable with its name or using the cells dictionary with the key of that cell's name. For example, for a cell named a, you can use either <code>a</code> or <code>cells["a"]</code>.</p>
+    <p>To check whether a cell contains X, O, or is empty, you need to write a condition. Please ensure to use capital letters for X and O. Here are some examples:</p>
+    <pre><code>if a == "X":  # or if cells["a"] == "X"
+    # Do something if cell a contains X
+
+if a == "O":  # or if cells["a"] == "O"
+    # Do something if cell a contains O
+
+if a != "X" and a != "O":  # or if cells["a"] != "X" and cells["a"] != "O"
+    # Do something if cell a is empty
+</code></pre>
+    <p>To choose the cell you want to fill on each turn, assign the name of that cell to a variable named <code>result</code>. For example, to fill cell a, use <code>result = "a"</code>.</p>
+    <p>If your code doesn't set the <code>result</code> variable on your turn, the game will randomly select one of the empty cells for you.</p>
+    <p>For instance, if you want to fill cell a only if it is empty, you can write the following code:</p>
+    <pre><code>if a != "X" and a != "O":  # or if cells["a"] != "X" and cells["a"] != "O"
+    result = "a"
+</code></pre>
+    <p>This code checks if cell a is not occupied by either X or O. If it's empty, it assigns "a" to the <code>result</code> variable, indicating your choice to fill that cell.</p>
+    <p>Feel free to customize and enhance the code to implement your desired strategies and game logic.</p>
+    <p>Enjoy playing the game!</p>
+</body>
+</html>
